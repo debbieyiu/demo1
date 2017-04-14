@@ -10,13 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   title = "The Deb Deb Web";
-
+  counter = 0;
   constructor() { }
 
   ngOnInit() {
   }
 
   changeTitle(evt:MouseEvent) {
+    this.counter ++;
     this.title = "The Deb Deb Deb Web";
     console.log(evt);
     console.log(evt.clientX);
