@@ -78,9 +78,11 @@
                 <input type="text" placeholder="請輸入搜尋關鍵字"
                   [ngModel]="keyword"
                   (change)="changeKeyword($event)"
-                  (keyup.escape)="clearKeyword($event)"
-                  accesskey="s">
-                <input type="button" value="搜尋" id="searchbutton">
+                  (keyup.escape)="clearKeyword()"
+                  accesskey="s" #tKeyword>
+                <input type="button" value="搜尋"
+                  id="searchbutton"
+                  (click)="keyword = tKeyword.value">
                 {{ keyword }}
               </div>
             </div>
