@@ -22,6 +22,9 @@ export class HeaderComponent implements OnInit {
     console.log(evt.clientX);
   }
 
+  is_h3_hightlight = false;
 
-
+  getStyle(){
+    return { 'background-color' : 'blue'}
+  }
 }
