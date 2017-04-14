@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { DataService } from '../data.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,30 +8,22 @@ import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input()
-  title = "The Deb Deb Web";
-
-  @Output()
-  titleChanged = new EventEmitter();
-
-  counter = 0;
-  constructor() { }
+  constructor(public datasvc: DataService) {
+  }
 
   ngOnInit() {
   }
 
-  changeTitle(evt:MouseEvent) {
-    this.counter ++;
-    this.title = "The Deb Deb Deb Web";
+  counter = 0;
+
+  changeTitle(evt: MouseEvent) {
+    this.datasvc.title = 'The Will Will Web';
     console.log(evt);
     console.log(evt.clientX);
 
-    this.titleChanged.emit(this.title);
+    this.counter++;
   }
 
-  is_h3_hightlight = false;
+  is_h3_highlight = false;
 
-  getStyle(){
-    return { 'background-color' : 'blue'}
-  }
 }
