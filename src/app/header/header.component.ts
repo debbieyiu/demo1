@@ -1,3 +1,4 @@
+import { NgModel } from '@angular/forms/src/directives';
 import { Title } from '@angular/platform-browser/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
@@ -20,5 +21,7 @@ export class HeaderComponent implements OnInit {
     console.log(evt);
     console.log(evt.clientX);
   }
+
+
 
 }
